@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import ToggleSwitch from './ToggleSwitch';
 import { saveLoginData } from '../utils/dataStorage';
 
 const LoginForm: React.FC = () => {
@@ -46,11 +46,12 @@ const LoginForm: React.FC = () => {
     <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-slide-in">
         <div className="bg-white rounded-3xl card-shadow p-8 space-y-6">
-          {/* Toggle Switch */}
+          {/* Logo */}
           <div className="flex justify-center mb-8">
-            <ToggleSwitch 
-              defaultChecked={rememberMe}
-              onChange={setRememberMe}
+            <img 
+              src="/lovable-uploads/a4d2a9fc-eada-4d63-80a1-0580128af6ba.png" 
+              alt="Company Logo" 
+              className="w-16 h-16 object-contain"
             />
           </div>
 
