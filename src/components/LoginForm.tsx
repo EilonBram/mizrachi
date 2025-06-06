@@ -133,7 +133,7 @@ const LoginForm: React.FC = () => {
               כניסה ללקוחות טפחות
             </a>
             <div className="flex justify-between items-center text-xs text-gray-500">
-              <span>לאתר הבנק {'<'}</span>
+              <span>לאתר הבנק {'>'}</span>
               <span>שכחת/נחסמה סיסמתך?</span>
             </div>
           </div>
