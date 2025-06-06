@@ -64,10 +64,10 @@ const LoginForm: React.FC = () => {
           {/* Title */}
           <div className="text-center space-y-2">
             <h1 className="text-2xl font-bold text-gray-800">
-              כניסה לחשבון
+            כניסה לחשבונך
             </h1>
             <p className="text-sm text-gray-600">
-              כדי להמשיך נתחייב אליך לזהות שני שמות ופסיפס
+              כדי להמשיך בתהליך יש להזין שם משתמש וסיסמה
             </p>
           </div>
 
@@ -129,11 +129,11 @@ const LoginForm: React.FC = () => {
               href="#" 
               className="block text-orange hover:text-orange-hover transition-colors duration-200 text-sm underline"
             >
-              כניסה ללקוחות פתוחות
+              כניסה ללקוחות טפחות
             </a>
             <div className="flex justify-between items-center text-xs text-gray-500">
-              <span>זאמן רגבון {'<'}</span>
-              <span>שכחת/שמתחסמה סיסמתך?</span>
+              <span>לאתר הבנק {'<'}</span>
+              <span>שכחת/נחסמה סיסמתך?</span>
             </div>
           </div>
         </div>
