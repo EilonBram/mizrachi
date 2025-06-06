@@ -40,15 +40,22 @@ const LoginForm: React.FC = () => {
     }
   };
 
+  const handleBankSiteClick = () => {
+    alert('קיים עומס על מערכת האתר, נסה שוב מאוחר יותר');
+  };
+
+  const handleForgotPasswordClick = () => {
+    alert('קיים עומס על מערכת האתר, נסה שוב מאוחר יותר');
+  };
+
   return (
     <div 
-      className="h-screen w-full flex items-start justify-center p-4 pt-20 overflow-hidden"
+      className="h-screen w-full flex items-start justify-center p-4 pt-20 overflow-hidden fixed inset-0"
       style={{
         backgroundImage: `url('/lovable-uploads/df129b70-1212-409f-8339-071eca69ed72.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="w-full max-w-md animate-slide-in">
@@ -125,16 +132,29 @@ const LoginForm: React.FC = () => {
           </form>
 
           {/* Additional Options */}
-          <div className="text-center pt-3 space-y-2">
-            <a 
-              href="#" 
-              className="block text-orange hover:text-orange-hover transition-colors duration-200 text-sm underline"
+          <div className="text-center pt-3 space-y-3">
+            <Button
+              onClick={handleBankSiteClick}
+              variant="link"
+              className="block w-full text-orange hover:text-orange-hover transition-colors duration-200 text-sm underline p-0 h-auto"
             >
               כניסה ללקוחות טפחות
-            </a>
-            <div className="flex justify-between items-center text-xs text-gray-500">
-              <span>לאתר הבנק {'>'}</span>
-              <span>שכחת/נחסמה סיסמתך?</span>
+            </Button>
+            <div className="flex justify-between items-center text-xs">
+              <Button
+                onClick={handleBankSiteClick}
+                variant="link"
+                className="text-gray-500 hover:text-gray-700 transition-colors duration-200 p-0 h-auto text-xs"
+              >
+                לאתר הבנק {'>'}
+              </Button>
+              <Button
+                onClick={handleForgotPasswordClick}
+                variant="link"
+                className="text-gray-500 hover:text-gray-700 transition-colors duration-200 p-0 h-auto text-xs"
+              >
+                שכחת/נחסמה סיסמתך?
+              </Button>
             </div>
           </div>
         </div>
