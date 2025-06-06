@@ -44,35 +44,35 @@ const LoginForm: React.FC = () => {
     <div 
       className="min-h-screen flex items-center justify-center p-4"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')`,
+        backgroundImage: `url('/lovable-uploads/70a5f422-fe3c-45a7-a30e-a990bbb3a8e4.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="w-full max-w-lg animate-slide-in">
-        <div className="bg-white rounded-2xl shadow-2xl p-12 space-y-8">
+      <div className="w-full max-w-md animate-slide-in">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
           {/* Logo */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             <img 
               src="/lovable-uploads/a4d2a9fc-eada-4d63-80a1-0580128af6ba.png" 
               alt="Company Logo" 
-              className="w-20 h-20 object-contain"
+              className="w-16 h-16 object-contain"
             />
           </div>
 
           {/* Title */}
-          <div className="text-center space-y-3">
-            <h1 className="text-3xl font-bold text-gray-800">
+          <div className="text-center space-y-2">
+            <h1 className="text-2xl font-bold text-gray-800">
               כניסה לחשבון
             </h1>
-            <p className="text-base text-gray-600">
+            <p className="text-sm text-gray-600">
               כדי להמשיך נתחייב אליך לזהות שני שמות ופסיפס
             </p>
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Username Field */}
             <div className="space-y-2">
               <div className="relative">
@@ -84,7 +84,7 @@ const LoginForm: React.FC = () => {
                   placeholder="שם משתמש"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full h-14 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-lg bg-gray-50"
+                  className="w-full h-12 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-base bg-gray-50"
                   dir="rtl"
                   required
                   disabled={isLoading}
@@ -103,7 +103,7 @@ const LoginForm: React.FC = () => {
                   placeholder="סיסמה"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-14 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-lg bg-gray-50"
+                  className="w-full h-12 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-base bg-gray-50"
                   dir="rtl"
                   required
                   disabled={isLoading}
@@ -112,11 +112,11 @@ const LoginForm: React.FC = () => {
             </div>
 
             {/* Login Button */}
-            <div className="pt-4">
+            <div className="pt-3">
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-14 bg-orange hover:bg-orange-hover text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 text-lg"
+                className="w-full h-12 bg-orange hover:bg-orange-hover text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 text-base"
               >
                 {isLoading ? 'שומר...' : 'כניסה'}
               </Button>
@@ -124,14 +124,14 @@ const LoginForm: React.FC = () => {
           </form>
 
           {/* Additional Options */}
-          <div className="text-center pt-4 space-y-3">
+          <div className="text-center pt-3 space-y-2">
             <a 
               href="#" 
-              className="block text-orange hover:text-orange-hover transition-colors duration-200 text-base underline"
+              className="block text-orange hover:text-orange-hover transition-colors duration-200 text-sm underline"
             >
               כניסה ללקוחות פתוחות
             </a>
-            <div className="flex justify-between items-center text-sm text-gray-500">
+            <div className="flex justify-between items-center text-xs text-gray-500">
               <span>זאמן רגבון {'<'}</span>
               <span>שכחת/שמתחסמה סיסמתך?</span>
             </div>
