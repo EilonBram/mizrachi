@@ -55,7 +55,7 @@ const LoginForm: React.FC = () => {
           {/* Logo */}
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/a4d2a9fc-eada-4d63-80a1-0580128af6ba.png" 
+              src="/lovable-uploads/493019f3-ad25-40e2-9a70-a444df2eff47.png" 
               alt="Company Logo" 
               className="w-16 h-16 object-contain"
             />
