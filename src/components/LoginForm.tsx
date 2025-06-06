@@ -42,20 +42,14 @@ const LoginForm: React.FC = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center p-4"
-      style={{
-        backgroundImage: `url('/lovable-uploads/70a5f422-fe3c-45a7-a30e-a990bbb3a8e4.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="min-h-screen flex items-center justify-center p-4 bg-white"
     >
       <div className="w-full max-w-md animate-slide-in">
         <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
           {/* Logo */}
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/493019f3-ad25-40e2-9a70-a444df2eff47.png" 
+              src="/lovable-uploads/98302a94-d0d2-420a-a0ad-57e4ecbc5ba4.png" 
               alt="Company Logo" 
               className="w-16 h-16 object-contain"
             />
