@@ -42,7 +42,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div 
-      className="min-h-screen w-full flex items-start justify-center p-4 pt-20"
+      className="h-screen w-full flex items-start justify-center p-4 pt-20 overflow-hidden"
       style={{
         backgroundImage: `url('/lovable-uploads/df129b70-1212-409f-8339-071eca69ed72.png')`,
         backgroundSize: 'cover',
