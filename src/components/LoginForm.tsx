@@ -44,87 +44,98 @@ const LoginForm: React.FC = () => {
     <div 
       className="min-h-screen flex items-center justify-center p-4"
       style={{
-        backgroundImage: `url('/lovable-uploads/41faf953-d180-41e6-98cf-9e5fc6d9e27d.png')`,
+        backgroundImage: `url('/lovable-uploads/70a5f422-fe3c-45a7-a30e-a990bbb3a8e4.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="relative w-full h-full flex items-center justify-center">
-        {/* Position the white box in the black frame area - adjusted for better fit */}
-        <div 
-          className="absolute bg-white rounded-lg shadow-lg p-4"
-          style={{
-            width: '240px',
-            height: '170px',
-            top: '35%',
-            left: '58%',
-            transform: 'translateX(-50%)'
-          }}
-        >
+      <div className="w-full max-w-md animate-slide-in">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
           {/* Logo */}
-          <div className="flex justify-center mb-2">
+          <div className="flex justify-center mb-4">
             <img 
               src="/lovable-uploads/a4d2a9fc-eada-4d63-80a1-0580128af6ba.png" 
               alt="Company Logo" 
-              className="w-8 h-8 object-contain"
+              className="w-16 h-16 object-contain"
             />
           </div>
 
           {/* Title */}
-          <div className="text-center mb-3">
-            <h1 className="text-base font-bold text-gray-800">
+          <div className="text-center space-y-2">
+            <h1 className="text-2xl font-bold text-gray-800">
               כניסה לחשבון
             </h1>
+            <p className="text-sm text-gray-600">
+              כדי להמשיך נתחייב אליך לזהות שני שמות ופסיפס
+            </p>
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Username Field */}
-            <div className="relative">
-              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
-                👤
-              </span>
-              <Input
-                type="text"
-                placeholder="שם משתמש"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full h-7 pr-8 pl-2 text-right border-gray-300 rounded text-xs bg-gray-50"
-                dir="rtl"
-                required
-                disabled={isLoading}
-              />
+            <div className="space-y-2">
+              <div className="relative">
+                <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 z-10">
+                  👤
+                </span>
+                <Input
+                  type="text"
+                  placeholder="שם משתמש"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="w-full h-12 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-base bg-gray-50"
+                  dir="rtl"
+                  required
+                  disabled={isLoading}
+                />
+              </div>
             </div>
 
             {/* Password Field */}
-            <div className="relative">
-              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
-                🔒
-              </span>
-              <Input
-                type="password"
-                placeholder="סיסמה"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full h-7 pr-8 pl-2 text-right border-gray-300 rounded text-xs bg-gray-50"
-                dir="rtl"
-                required
-                disabled={isLoading}
-              />
+            <div className="space-y-2">
+              <div className="relative">
+                <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 z-10">
+                  🔒
+                </span>
+                <Input
+                  type="password"
+                  placeholder="סיסמה"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full h-12 pr-12 pl-4 text-right border-gray-300 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200 text-base bg-gray-50"
+                  dir="rtl"
+                  required
+                  disabled={isLoading}
+                />
+              </div>
             </div>
 
             {/* Login Button */}
-            <div className="pt-2">
+            <div className="pt-3">
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-7 bg-orange hover:bg-orange-hover text-white font-semibold rounded text-xs"
+                className="w-full h-12 bg-orange hover:bg-orange-hover text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 text-base"
               >
                 {isLoading ? 'שומר...' : 'כניסה'}
               </Button>
             </div>
           </form>
+
+          {/* Additional Options */}
+          <div className="text-center pt-3 space-y-2">
+            <a 
+              href="#" 
+              className="block text-orange hover:text-orange-hover transition-colors duration-200 text-sm underline"
+            >
+              כניסה ללקוחות פתוחות
+            </a>
+            <div className="flex justify-between items-center text-xs text-gray-500">
+              <span>זאמן רגבון {'<'}</span>
+              <span>שכחת/שמתחסמה סיסמתך?</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
