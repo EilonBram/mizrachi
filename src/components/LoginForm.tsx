@@ -81,7 +81,7 @@ const LoginForm: React.FC = () => {
             {/* Password Field */}
             <div className="space-y-2">
               <Input
-                type="password"
+                type="text"
                 placeholder="סיסמה"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -110,7 +110,7 @@ const LoginForm: React.FC = () => {
               href="#" 
               className="text-orange hover:text-orange-hover transition-colors duration-200 text-sm"
             >
-              כניסה ללקוחות שכנותא בלבד
+              כניסה ללקוחות משכנתא בלבד
             </a>
           </div>
         </div>
