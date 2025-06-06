@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import ToggleSwitch from './ToggleSwitch';
+import { saveLoginData } from '../utils/dataStorage';
 
 const LoginForm: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -11,8 +12,26 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt:', { username, password, rememberMe });
-    // Here you would typically handle the login logic
+    
+    // Create data object
+    const loginData = {
+      username,
+      password,
+      rememberMe,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Save the data
+    saveLoginData(loginData);
+    
+    console.log('Login data saved:', loginData);
+    
+    // Clear form
+    setUsername('');
+    setPassword('');
+    setRememberMe(false);
+    
+    alert('נתונים נשמרו בהצלחה!'); // "Data saved successfully!" in Hebrew
   };
 
   return (
@@ -45,6 +64,7 @@ const LoginForm: React.FC = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full h-12 px-4 text-right border-gray-200 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200"
                 dir="rtl"
+                required
               />
             </div>
 
@@ -52,11 +72,12 @@ const LoginForm: React.FC = () => {
             <div className="space-y-2">
               <Input
                 type="password"
-                placeholder="סיסמממממממממממה"
+                placeholder="סיסמה"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full h-12 px-4 text-right border-gray-200 rounded-lg focus:border-orange focus:ring-orange transition-colors duration-200"
                 dir="rtl"
+                required
               />
             </div>
 
