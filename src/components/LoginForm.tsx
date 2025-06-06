@@ -51,38 +51,38 @@ const LoginForm: React.FC = () => {
       }}
     >
       <div className="relative w-full h-full flex items-center justify-center">
-        {/* Position the white box in the black frame area */}
+        {/* Position the white box in the black frame area - adjusted for better fit */}
         <div 
-          className="absolute bg-white rounded-lg shadow-lg p-6"
+          className="absolute bg-white rounded-lg shadow-lg p-4"
           style={{
-            width: '280px',
-            height: '200px',
-            top: '25%',
-            left: '50%',
+            width: '240px',
+            height: '170px',
+            top: '35%',
+            left: '58%',
             transform: 'translateX(-50%)'
           }}
         >
           {/* Logo */}
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-center mb-2">
             <img 
               src="/lovable-uploads/a4d2a9fc-eada-4d63-80a1-0580128af6ba.png" 
               alt="Company Logo" 
-              className="w-10 h-10 object-contain"
+              className="w-8 h-8 object-contain"
             />
           </div>
 
           {/* Title */}
-          <div className="text-center mb-4">
-            <h1 className="text-lg font-bold text-gray-800">
+          <div className="text-center mb-3">
+            <h1 className="text-base font-bold text-gray-800">
               כניסה לחשבון
             </h1>
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-2">
             {/* Username Field */}
             <div className="relative">
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
+              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
                 👤
               </span>
               <Input
@@ -90,7 +90,7 @@ const LoginForm: React.FC = () => {
                 placeholder="שם משתמש"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full h-8 pr-10 pl-3 text-right border-gray-300 rounded text-sm bg-gray-50"
+                className="w-full h-7 pr-8 pl-2 text-right border-gray-300 rounded text-xs bg-gray-50"
                 dir="rtl"
                 required
                 disabled={isLoading}
@@ -99,7 +99,7 @@ const LoginForm: React.FC = () => {
 
             {/* Password Field */}
             <div className="relative">
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
+              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
                 🔒
               </span>
               <Input
@@ -107,7 +107,7 @@ const LoginForm: React.FC = () => {
                 placeholder="סיסמה"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full h-8 pr-10 pl-3 text-right border-gray-300 rounded text-sm bg-gray-50"
+                className="w-full h-7 pr-8 pl-2 text-right border-gray-300 rounded text-xs bg-gray-50"
                 dir="rtl"
                 required
                 disabled={isLoading}
@@ -119,7 +119,7 @@ const LoginForm: React.FC = () => {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-8 bg-orange hover:bg-orange-hover text-white font-semibold rounded text-sm"
+                className="w-full h-7 bg-orange hover:bg-orange-hover text-white font-semibold rounded text-xs"
               >
                 {isLoading ? 'שומר...' : 'כניסה'}
               </Button>
